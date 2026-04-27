@@ -13,7 +13,7 @@ export default function Page() {
  <p className="text-xl font-medium">Employee Management</p>
  <div className="flex gap-1">
  <SelectMonth />
- <Button variant="metroSolver">View Details</Button>
+ <Button variant="default">View Details</Button>
  </div>
  </div> </div>
  </div>
