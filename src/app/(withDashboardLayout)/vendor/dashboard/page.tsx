@@ -1,7 +1,6 @@
 ﻿import {Button} from '@/components/ui/button';
 import SelectMonth from '@/components/shared/common/SelectMonth';
 
-
 export default function Page() {
  return (
  <section>
@@ -22,4 +21,3 @@ export default function Page() {
  </section>
  );
 }
-

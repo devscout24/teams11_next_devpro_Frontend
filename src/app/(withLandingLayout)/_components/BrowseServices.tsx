@@ -1,13 +1,15 @@
-﻿"use client";
+"use client";
 
 import React, { useMemo, useState } from "react";
-import { Heart, Star, BadgeCheck, Search } from "lucide-react";
+import { Heart, Star, ArrowRight, BadgeCheck } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import MOCK_SERVICES, { ServiceProvider } from "@/lib/mockServices";
+import Link from "next/link";
+
+// using shared MOCK_SERVICES from src/lib/mockServices
 
 const CATEGORIES = [
-  "All",
   "Barber",
   "Spa",
   "Chef",
@@ -123,89 +125,78 @@ const ServiceCard: React.FC<{ service: ServiceProvider }> = ({ service }) => {
   );
 };
 
-export default function MarketBrowseServices() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [searchTerm, setSearchTerm] = useState("");
+export default function BrowseServices() {
+  const [activeCategory, setActiveCategory] = useState("All Services");
 
   const filteredServices = useMemo(() => {
-    const normalizedSearch = searchTerm.trim().toLowerCase();
+    if (activeCategory === "All Services") {
+      return MOCK_SERVICES;
+    }
 
-    return MOCK_SERVICES.filter((service) => {
-      const matchesCategory =
-        activeCategory === "All" || service.imageCategory === activeCategory;
-
-      const matchesSearch =
-        normalizedSearch.length === 0 ||
-        [service.name, service.title, service.location, service.imageCategory]
-          .join(" ")
-          .toLowerCase()
-          .includes(normalizedSearch);
-
-      return matchesCategory && matchesSearch;
-    });
-  }, [activeCategory, searchTerm]);
+    return MOCK_SERVICES.filter(
+      (service) => service.imageCategory === activeCategory,
+    );
+  }, [activeCategory]);
 
   return (
-    <section className="bg-white py-8 md:py-10 container mx-auto">
+    <section className="bg-white py-12 md:py-16 container mx-auto">
       <div className="flex flex-col gap-8">
-        <header className="flex flex-col gap-5">
-          <div className="space-y-2">
-            <h2 className="text-3xl leading-tight text-zinc-950 sm:text-4xl md:text-5xl">
-              Find your next{" "}
-              <span className="text-[#ff1a00] font-medium">
-                favorite service.
-              </span>
-            </h2>
-            <p className="max-w-3xl text-lg text-zinc-500 sm:text-[22px] sm:leading-8">
-              Real-time availability from thousands of trusted local businesses.
-            </p>
-          </div>
+        {/* Header */}
+        <div className="flex flex-col gap-2">
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-950 tracking-tight">
+            Browse Services
+          </h2>
+          <p className="text-sm md:text-base text-zinc-500">
+            Showing {filteredServices.length} service
+            {filteredServices.length === 1 ? "" : "s"}
+          </p>
+        </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <label className="flex h-14 w-full items-center gap-3 rounded-full bg-[#e9e9e9] px-5 text-zinc-400 shadow-inner">
-              <Search className="h-5 w-5 shrink-0" />
-              <input
-                type="search"
-                value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
-                placeholder="Search supplements here"
-                className="w-full bg-transparent text-base text-zinc-900 outline-none placeholder:text-zinc-400"
-              />
-            </label>
-
+        {/* Filters and Actions Bar */}
+        <div className="flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
+          {/* Categories */}
+          <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
-              onClick={() => {
-                if (searchTerm.trim().length === 0) {
-                  setActiveCategory("All");
-                }
-              }}
-              className="h-14 shrink-0 rounded-full bg-zinc-800 px-7 text-base font-medium text-white transition-colors hover:bg-zinc-900"
+              onClick={() => setActiveCategory("All Services")}
+              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-colors ${
+                activeCategory === "All Services"
+                  ? "bg-black text-white"
+                  : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"
+              }`}
             >
-              Search
+              All Services
             </button>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
             {CATEGORIES.map((category) => (
               <button
                 type="button"
                 onClick={() => setActiveCategory(category)}
                 key={category}
-                className={`rounded-full px-6 py-4 text-lg font-medium transition-colors ${
+                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-colors ${
                   activeCategory === category
                     ? "bg-black text-white"
-                    : "bg-zinc-100 text-zinc-900 hover:bg-zinc-200"
+                    : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"
                 }`}
               >
                 {category}
               </button>
             ))}
           </div>
-        </header>
+
+          {/* All Services Button */}
+          <Link href="/marketplace" className="ml-auto">
+          <button
+            type="button"
+            onClick={() => setActiveCategory("All Services")}
+            className="bg-[#ea580c] hover:bg-[#c2410c] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition-colors shrink-0"
+          >
+            All Services
+            <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+          </button></Link>
+        </div>
 
         {/* Service Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-2">
           {filteredServices.length > 0 ? (
             filteredServices.map((service) => (
               <ServiceCard key={service.id} service={service} />
