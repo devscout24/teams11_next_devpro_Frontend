@@ -14,7 +14,7 @@ export function EmptyBookings() {
         Discover incredible local pros and reserve your next appointment in
         seconds.
       </p>
-      <Button className="bg-[#D32F2F] hover:bg-[#B71C1C] text-white px-8 rounded-full">
+      <Button className="bg-primary hover:bg-[#B71C1C] text-white px-8 rounded-full">
         Book now
       </Button>
     </div>

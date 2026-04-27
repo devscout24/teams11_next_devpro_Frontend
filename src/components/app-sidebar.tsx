@@ -52,7 +52,7 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="h-auto p-0 hover:bg-transparent">
               <Link href={`/`} className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#D32F2F] text-white font-bold text-xl shrink-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-bold text-xl shrink-0">
                   BP
                 </div>
                 <div className="flex flex-col items-start">
@@ -87,7 +87,7 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
               href={`/`}
               className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#D32F2F] text-white font-semibold text-xl shrink-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-semibold text-xl shrink-0">
                   A
                 </div>
                 <div className="flex flex-col items-start">

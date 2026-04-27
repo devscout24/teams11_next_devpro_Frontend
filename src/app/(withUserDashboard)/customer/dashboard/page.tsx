@@ -1,13 +1,14 @@
 'use client';
 
 import React, {useState} from 'react';
-import {BookingTabs} from '@/components/dashboard/booking-tabs';
-import {BookingCard} from '@/components/dashboard/booking-card';
+import {BookingTabs} from './_components/BookingTabs';
+import {BookingCard} from './_components/BookingCard';
 
 const DUMMY_BOOKINGS = [
   // Upcoming Data
   {
     id: 1,
+    image: '/customer/profile.png',
     name: 'James Rodriguez',
     service: 'Beard Trim & Style',
     date: 'Jan 20, 2026',
@@ -19,6 +20,7 @@ const DUMMY_BOOKINGS = [
   },
   {
     id: 2,
+    image: '/customer/user1.png',
     name: 'Sarah Mitchell',
     service: 'Classic Haircut',
     date: 'Jan 20, 2026',
@@ -30,6 +32,7 @@ const DUMMY_BOOKINGS = [
   },
   {
     id: 3,
+    image: '/customer/user2.png',
     name: 'Emily Chen',
     service: 'Full Color Treatment',
     date: 'Jan 20, 2026',
@@ -43,6 +46,7 @@ const DUMMY_BOOKINGS = [
   // Previous Data (Exact as per your second screenshot)
   {
     id: 4,
+    image: '/customer/profile.png',
     name: 'James Rodriguez',
     service: 'Beard Trim & Style',
     date: 'Jan 20, 2026',
@@ -54,6 +58,7 @@ const DUMMY_BOOKINGS = [
   },
   {
     id: 5,
+    image: '/customer/user1.png',
     name: 'Sarah Mitchell',
     service: 'Classic Haircut',
     date: 'Jan 20, 2026',
@@ -65,6 +70,7 @@ const DUMMY_BOOKINGS = [
   },
   {
     id: 6,
+    image: '/customer/user2.png',
     name: 'Emily Chen',
     service: 'Full Color Treatment',
     date: 'Jan 20, 2026',

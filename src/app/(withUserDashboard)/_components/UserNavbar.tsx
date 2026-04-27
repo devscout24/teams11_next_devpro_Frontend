@@ -6,7 +6,7 @@ export function UserNavbar() {
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-[#D32F2F]">BookingPam</div>
+        <div className="text-2xl font-bold text-primary">BookingPam</div>
 
         {/* Search Bar */}
         <div className="hidden md:flex flex-1 max-w-md mx-8 relative">
@@ -25,7 +25,7 @@ export function UserNavbar() {
           </button>
           <div className="relative cursor-pointer">
             <IconBell className="w-6 h-6 text-gray-500" />
-            <span className="absolute -top-1 -right-1 bg-[#D32F2F] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
               3
             </span>
           </div>

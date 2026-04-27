@@ -51,7 +51,7 @@ export function UserProfileSidebar() {
               className={cn(
                 'flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium',
                 isActive
-                  ? 'bg-[#D32F2F] text-white shadow-lg shadow-red-100'
+                  ? 'bg-primary text-white shadow-lg shadow-red-100'
                   : 'text-gray-600 hover:bg-gray-50',
               )}>
               <item.icon
