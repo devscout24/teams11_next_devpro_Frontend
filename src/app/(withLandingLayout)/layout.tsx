@@ -1,17 +1,17 @@
-﻿import Footer from "@/components/shared/Footer";
-import Header from "@/components/shared/Header";
-
+﻿
+import Footer from "../component/teams/layout/Footer";
+import Navbar from "../component/teams/layout/Navbar";
 
 export default function CommonLayout({
- children,
+  children,
 }: Readonly<{
- children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
- return (
- <>
- <Header />
- {children}
- <Footer />
- </>
- );
+  return (
+    <>
+      <Navbar/>
+      {children}
+      <Footer />
+    </>
+  );
 }
