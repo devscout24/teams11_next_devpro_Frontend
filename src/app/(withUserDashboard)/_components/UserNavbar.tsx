@@ -1,12 +1,15 @@
 import {IconBell, IconHeart, IconSearch} from '@tabler/icons-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function UserNavbar() {
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-primary">BookingPam</div>
+        <div className="text-2xl font-bold text-primary">
+          <Link href={'/'}>BookingPam</Link>
+        </div>
 
         {/* Search Bar */}
         <div className="hidden md:flex flex-1 max-w-md mx-8 relative">
