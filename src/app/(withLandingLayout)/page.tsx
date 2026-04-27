@@ -2,14 +2,18 @@
 // import Programs from './_components/Programs';
 // import WhyTrainWithUsSection from './_components/WhyTrainWithUsSection';
 
+import Banner from "./_components/Banner";
+import BrowseServices from "./_components/BrowseServices";
+import GetTheMobileApp from "./_components/GetTheMobileApp";
+import TopServicesSection from "./_components/TopServicesSection";
+
 export default function Home() {
  return (
  <div className="flex flex-col flex-1 items-center justify-center">
-
- <p>Home Page</p>
- {/* <HeroSection />
- <Programs />
- <FAQSection /> */}
+ <Banner />
+ <TopServicesSection />
+ <BrowseServices />
+ <GetTheMobileApp />
  </div>
  );
 }
