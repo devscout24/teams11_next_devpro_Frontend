@@ -1,8 +1,13 @@
-﻿import {AppSidebar} from '@/components/app-sidebar';
+﻿'use client';
+
+import {AppSidebar} from '@/components/app-sidebar';
 import {SiteHeader} from '@/components/site-header';
 import {SidebarInset, SidebarProvider} from '@/components/ui/sidebar';
+import {useRole} from '@/hooks/use-role';
 
 const DashboardLayout = ({children}: {children: React.ReactNode}) => {
+  const role = useRole();
+
   return (
     <main>
       <SidebarProvider
@@ -12,7 +17,8 @@ const DashboardLayout = ({children}: {children: React.ReactNode}) => {
             '--header-height': 'calc(var(--spacing) * 12)',
           } as React.CSSProperties
         }>
-        <AppSidebar variant="inset" />
+        {role !== 'customer' ? <AppSidebar variant="inset" /> : ''}
+
         <SidebarInset>
           {/* Header */}
           <SiteHeader />

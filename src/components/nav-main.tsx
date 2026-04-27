@@ -29,13 +29,13 @@ interface NavMainProps {
 export function NavMain({items, role}: NavMainProps) {
   const pathname = usePathname();
 
-  const groupLabel = role === 'vendor' ? 'Vendor Menu' : 'User Menu';
+  // const groupLabel = role === 'vendor' ? 'Vendor Menu' : 'User Menu';
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel className="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-4 mb-1">
+      {/* <SidebarGroupLabel className="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-4 mb-1">
         {groupLabel}
-      </SidebarGroupLabel>
+      </SidebarGroupLabel> */}
       <SidebarGroupContent>
         <SidebarMenu className="gap-1">
           {items.map((item) => {
