@@ -49,13 +49,13 @@ export default function TeamManagement() {
           </div>
 
           {/* Team Roster Card */}
-          <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6">
+          <div className=" rounded-2xl border border-neutral-200 shadow-sm p-6">
             <h3 className="text-sm font-semibold text-neutral-900 mb-4">Team Roster</h3>
-            <div className="space-y-3">
+            <div className="space-y-3 ">
               {teamMembers.map(({ initials, name, role, status, color }) => (
                 <div
                   key={name}
-                  className="flex items-center justify-between py-2"
+                  className="flex items-center justify-between py-2 bg-gray-200/60 rounded-lg p-2"
                 >
                   <div className="flex items-center gap-3">
                     <div
