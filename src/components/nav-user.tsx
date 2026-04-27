@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import {
  IconCreditCard,
@@ -25,86 +25,92 @@ import {
 } from '@/components/ui/sidebar';
 
 export function NavUser({
- user,
+  user,
 }: {
- user: {
- name: string;
- email: string;
- avatar: string;
- };
+  user: {
+    name: string;
+    email: string;
+    avatar: string;
+    plan?: string;
+  };
 }) {
- const {isMobile} = useSidebar();
+  const {isMobile} = useSidebar();
 
- return (
- <SidebarMenu>
- <SidebarMenuItem>
- <DropdownMenu>
- <DropdownMenuTrigger asChild>
- <SidebarMenuButton
- size="lg"
- className="data-[state=open]:bg-sidebar-accent cursor-pointer data-[state=open]:text-sidebar-accent-foreground">
- <Avatar className="h-9 w-9 rounded-full grayscale">
- <AvatarImage
- // src={user.avatar}
- src={'https://github.com/maxleiter.png'}
- alt={user.name}
- />
- <AvatarFallback className="rounded-lg">CN</AvatarFallback>
- </Avatar>
- <div className="grid flex-1 text-left text-sm leading-tight">
- <span className="truncate font-medium">{user.name}</span>
- <span className="text-muted-foreground truncate text-xs">
- {user.email}
- </span>
- </div>
- </SidebarMenuButton>
- </DropdownMenuTrigger>
- <DropdownMenuContent
- className="w-(--radix-dropdown-menu-trigger-width) min-w-56 mt-6 rounded-lg"
- side={isMobile ? 'bottom' : 'right'}
- align="end"
- sideOffset={4}>
- <DropdownMenuLabel className="p-0 font-normal">
- <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
- <Avatar className="h-9 w-9 rounded-full">
- <AvatarImage // src={user.avatar}
- src={'https://github.com/maxleiter.png'}
- alt={user.name}
- />
- <AvatarFallback className="rounded-lg">CN</AvatarFallback>
- </Avatar>
- <div className="grid flex-1 text-left text-sm leading-tight">
- <span className="truncate font-medium">{user.name}</span>
- <span className="text-muted-foreground truncate text-xs">
- {user.email}
- </span>
- </div>
- </div>
- </DropdownMenuLabel>
- <DropdownMenuSeparator />
- <DropdownMenuGroup>
- <DropdownMenuItem className="cursor-pointer">
- <IconUserCircle />
- Account
- </DropdownMenuItem>
- <DropdownMenuItem className="cursor-pointer">
- <IconCreditCard />
- Billing
- </DropdownMenuItem>
- <DropdownMenuItem className="cursor-pointer">
- <IconNotification />
- Notifications
- </DropdownMenuItem>
- </DropdownMenuGroup>
- <DropdownMenuSeparator />
- <DropdownMenuItem className="cursor-pointer">
- <IconLogout />
- Log out
- </DropdownMenuItem>
- </DropdownMenuContent>
- </DropdownMenu>
- </SidebarMenuItem>
- </SidebarMenu>
- );
+  const initials = user.name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase();
+
+  return (
+    <SidebarMenu>
+      <SidebarMenuItem>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <SidebarMenuButton
+              size="lg"
+              className="data-[state=open]:bg-sidebar-accent cursor-pointer data-[state=open]:text-sidebar-accent-foreground hover:bg-transparent"
+            >
+              <Avatar className="h-9 w-9 rounded-full">
+                <AvatarImage src={user.avatar} alt={user.name} />
+                <AvatarFallback className="bg-primary text-primary-foreground font-bold text-xs">
+                  {initials[0]}
+                </AvatarFallback>
+              </Avatar>
+              <div className="grid flex-1 text-left text-sm leading-tight ml-2">
+                <span className="truncate font-bold text-foreground">{user.name}</span>
+                <span className="text-muted-foreground truncate text-[11px] font-medium">
+                  {user.plan || user.email}
+                </span>
+              </div>
+            </SidebarMenuButton>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            className="w-(--radix-dropdown-menu-trigger-width) min-w-56 mt-2 rounded-xl border-border shadow-lg"
+            side={isMobile ? 'bottom' : 'right'}
+            align="end"
+            sideOffset={4}
+          >
+            <DropdownMenuLabel className="p-0 font-normal">
+              <div className="flex items-center gap-3 px-3 py-2.5 text-left text-sm">
+                <Avatar className="h-9 w-9 rounded-full">
+                  <AvatarImage src={user.avatar} alt={user.name} />
+                  <AvatarFallback className="bg-primary text-primary-foreground font-bold text-xs">
+                    {initials[0]}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-bold text-foreground">{user.name}</span>
+                  <span className="text-muted-foreground truncate text-xs">
+                    {user.email}
+                  </span>
+                </div>
+              </div>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator className="bg-border/50" />
+            <DropdownMenuGroup>
+              <DropdownMenuItem className="cursor-pointer py-2 px-3 focus:bg-muted rounded-lg">
+                <IconUserCircle className="w-4 h-4 mr-2 text-muted-foreground" />
+                <span className="text-sm font-medium">Account</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer py-2 px-3 focus:bg-muted rounded-lg">
+                <IconCreditCard className="w-4 h-4 mr-2 text-muted-foreground" />
+                <span className="text-sm font-medium">Billing</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer py-2 px-3 focus:bg-muted rounded-lg">
+                <IconNotification className="w-4 h-4 mr-2 text-muted-foreground" />
+                <span className="text-sm font-medium">Notifications</span>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator className="bg-border/50" />
+            <DropdownMenuItem className="cursor-pointer py-2 px-3 focus:bg-muted rounded-lg text-destructive focus:text-destructive">
+              <IconLogout className="w-4 h-4 mr-2" />
+              <span className="text-sm font-medium">Log out</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </SidebarMenuItem>
+    </SidebarMenu>
+  );
 }
 
