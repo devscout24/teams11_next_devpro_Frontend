@@ -63,31 +63,30 @@ const ServiceRow = ({ service }: { service: typeof servicesData[0] }) => (
     <div className="flex items-center gap-4">
       <Avatar className="h-[40px] w-[40px] rounded-full shrink-0">
         <AvatarImage src={service.avatar} />
-        <AvatarFallback className="bg-slate-100 text-slate-400 font-bold text-xs">SM</AvatarFallback>
+        <AvatarFallback className="bg-slate-100 text-muted-foreground font-bold text-xs">SM</AvatarFallback>
       </Avatar>
       <div className="space-y-0.5">
-        <h3 className="text-sm font-bold text-slate-800">{service.name}</h3>
-        <p className="text-[11px] font-medium text-slate-400">
+        <h3 className="text-sm  text-foreground">{service.name}</h3>
+        <p className="text-[11px] font-medium text-muted-foreground">
           {service.duration} {service.buffer}
         </p>
       </div>
     </div>
 
     <div className="flex items-center gap-4">
-      <Button variant="outline" size="sm" className="h-8 px-4 rounded-lg text-[11px] font-bold gap-2 bg-white border-slate-200 text-slate-600 hover:bg-slate-50 shadow-sm transition-all">
+      <Button variant="outline" size="sm" className="h-8 px-4 rounded-xl text-[11px] font-bold gap-2 bg-white border-slate-200 text-foreground hover:bg-slate-50 hover:text-muted-foreground shadow-sm transition-all">
         <LinkIcon className="w-3 h-3" />
-        Copay Link
+        Copy Link
       </Button>
       
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" className="h-8 w-8 text-slate-400 hover:text-slate-600">
+          <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground">
             <MoreVertical className="w-4 h-4" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
           <DropdownMenuItem className="text-xs font-medium">Edit</DropdownMenuItem>
-          <DropdownMenuItem className="text-xs font-medium">Duplicate</DropdownMenuItem>
           <DropdownMenuItem className="text-xs font-medium text-destructive">Delete</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -98,7 +97,7 @@ const ServiceRow = ({ service }: { service: typeof servicesData[0] }) => (
 const AddSelectionMenu = () => (
   <Popover>
     <PopoverTrigger asChild>
-      <Button className="bg-[#E11D48] hover:bg-[#BE123C] text-white rounded-lg h-11 px-6 font-bold gap-2 shadow-lg shadow-red-500/20 transition-all active:scale-95">
+      <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg h-11 px-6 font-bold gap-2 shadow-sm transition-all active:scale-95">
         <Plus className="w-5 h-5" />
         Add
       </Button>
@@ -113,7 +112,7 @@ const AddSelectionMenu = () => (
               <div className="p-2 bg-white rounded-lg shadow-sm group-hover:scale-110 transition-transform">
                 <Briefcase className="w-5 h-5 text-[#16A34A]" />
               </div>
-              <span className="text-base font-bold text-slate-800">Service</span>
+              <span className="text-base font-bold text-foreground">Service</span>
             </button>
           } 
         />
@@ -126,7 +125,7 @@ const AddSelectionMenu = () => (
               <div className="p-2 bg-white rounded-lg shadow-sm group-hover:scale-110 transition-transform">
                 <GraduationCap className="w-5 h-5 text-[#0891B2]" />
               </div>
-              <span className="text-base font-bold text-slate-800">Class</span>
+              <span className="text-base font-bold text-foreground">Class</span>
             </button>
           } 
         />
@@ -142,12 +141,12 @@ export default function ServicesPage() {
     <div className="p-6 lg:p-10 space-y-8 bg-[#F8FAFC]/50 min-h-screen">
       {/* Top Filter Bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div className="flex items-center gap-3 bg-white p-1 rounded-xl border border-slate-100 shadow-sm">
+        <div className="flex items-center gap-3 bg-white p-1 rounded-lg border border-slate-100 shadow-sm">
           <Button 
             onClick={() => setActiveTab('Services')}
             className={cn(
-              "h-10 px-8 rounded-lg text-sm font-bold transition-all",
-              activeTab === 'Services' ? "bg-[#E11D48] text-white shadow-lg shadow-red-500/10" : "bg-transparent text-slate-500 hover:bg-slate-50"
+              "h-10 px-8 rounded-md text-[15px] font-bold transition-all",
+              activeTab === 'Services' ? "bg-primary text-primary-foreground shadow-sm" : "bg-transparent text-muted-foreground hover:bg-slate-50"
             )}
           >
             Services
@@ -155,8 +154,8 @@ export default function ServicesPage() {
           <Button 
             onClick={() => setActiveTab('Classes')}
             className={cn(
-              "h-10 px-8 rounded-lg text-sm font-bold transition-all",
-              activeTab === 'Classes' ? "bg-[#E11D48] text-white shadow-lg shadow-red-500/10" : "bg-transparent text-slate-500 hover:bg-slate-50"
+              "h-10 px-8 rounded-md text-[15px] font-bold transition-all",
+              activeTab === 'Classes' ? "bg-primary text-primary-foreground shadow-sm" : "bg-transparent text-muted-foreground hover:bg-slate-50"
             )}
           >
             Classes
@@ -165,14 +164,14 @@ export default function ServicesPage() {
 
         <div className="flex items-center gap-4 flex-1 md:max-w-2xl">
           <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input 
               placeholder="Search services..." 
-              className="h-11 pl-11 bg-white border-slate-100 rounded-lg text-sm placeholder:text-slate-300 focus-visible:ring-primary/20 shadow-sm"
+              className="h-11 pl-12 bg-white border-slate-100 rounded-lg text-[15px] placeholder:text-muted-foreground focus-visible:ring-primary/20 shadow-sm"
             />
           </div>
           
-          <Button variant="outline" className="h-11 px-4 rounded-lg bg-white border-slate-100 text-slate-500 font-bold gap-2 text-sm shadow-sm">
+          <Button variant="outline" className="h-11 px-4 rounded-lg bg-white border-slate-100 text-foreground font-bold gap-2 text-[15px] shadow-sm hover:bg-slate-50 hover:text-muted-foreground">
             All team members
             <ChevronDown className="w-4 h-4" />
           </Button>
@@ -182,7 +181,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-black text-slate-900 tracking-tight">Services</h2>
+        <h2 className="text-[28px] font-black text-foreground tracking-tight">Services</h2>
         
         <div className="bg-white rounded-[24px] border border-slate-100 shadow-sm overflow-hidden">
           {servicesData.map((service) => (

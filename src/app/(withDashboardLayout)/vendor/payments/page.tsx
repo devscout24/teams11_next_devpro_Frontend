@@ -27,14 +27,14 @@ const PaymentMethodCard = ({
         </svg>
       </div>
       <div className="space-y-0.5">
-        <h4 className="text-base font-bold text-slate-800">{name}</h4>
-        <p className="text-xs font-medium text-slate-400">{link}</p>
+        <h4 className="text-base font-semibold text-foreground">{name}</h4>
+        <p className="text-xs font-medium text-muted-foreground">{link}</p>
       </div>
     </div>
     <Button 
       variant="outline" 
       size="sm" 
-      className="h-9 px-5 rounded-lg text-xs font-bold bg-[#E11D48] text-white border-none hover:bg-[#BE123C] hover:text-white transition-all active:scale-95"
+      className="h-9 px-5 rounded-lg text-xs font-semibold bg-primary text-primary-foreground border-none hover:bg-primary/90 transition-all active:scale-95"
     >
       Remove
     </Button>
@@ -46,18 +46,18 @@ export default function PaymentsPage() {
     <div className="p-6 lg:p-10 space-y-10 bg-[#F8FAFC]/50 min-h-screen">
       {/* Header */}
       <div className="space-y-1">
-        <h1 className="text-[32px] font-black text-slate-900 tracking-tight">Payment Methods</h1>
-        <p className="text-slate-400 text-base font-medium">
+        <h1 className="text-[32px] font-bold text-foreground tracking-tight">Payment Methods</h1>
+        <p className="text-muted-foreground text-base font-medium">
           Secure payments are processed externally via Stripe. Your data is always protected.
         </p>
       </div>
 
       {/* Info Banner */}
-      <div className="bg-[#FFF1F1] rounded-[24px] p-6 border border-red-50/50 flex items-start gap-4">
-        <div className="w-8 h-8 rounded-full bg-[#E11D48] flex items-center justify-center shrink-0">
-          <Info className="w-5 h-5 text-white" />
+      <div className="bg-primary/5 rounded-[24px] p-6 border border-primary/10 flex items-start gap-4">
+        <div className="flex items-center justify-center shrink-0 pt-0.5">
+          <Info className="w-5 h-5 text-primary" />
         </div>
-        <p className="text-sm font-medium text-slate-600 leading-relaxed">
+        <p className="text-sm font-medium text-foreground/80 leading-relaxed">
           Copy and paste your personal direct payment link (e.g. Stripe, PayPal.me, Revolut etc.). 
           This link allows users to pay you directly after their booking.
         </p>
@@ -67,18 +67,18 @@ export default function PaymentsPage() {
         {/* Left Column - Add Link */}
         <div className="xl:col-span-5">
           <div className="bg-white rounded-[32px] p-8 border border-slate-50 shadow-sm space-y-6">
-            <h3 className="text-xl font-bold text-slate-900">Your Payment Link</h3>
+            <h3 className="text-xl font-semibold text-foreground">Your Payment Link</h3>
             
             <div className="space-y-4">
               <div className="relative">
-                <LinkIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300" />
+                <LinkIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input 
                   placeholder="Enter your Stripe or PayPal link...." 
-                  className="h-14 pl-11 bg-slate-50 border-none rounded-2xl text-sm focus-visible:ring-primary/20"
+                  className="h-12 pl-11 bg-white border border-slate-100 rounded-xl text-sm placeholder:text-muted-foreground focus-visible:ring-primary/20"
                 />
               </div>
               
-              <Button className="w-full h-14 bg-[#E11D48] hover:bg-[#BE123C] text-white rounded-2xl font-bold text-base shadow-xl shadow-red-500/10 transition-all active:scale-[0.98]">
+              <Button className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-base shadow-sm transition-all active:scale-[0.98]">
                 Add Link
               </Button>
             </div>

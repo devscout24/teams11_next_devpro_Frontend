@@ -18,55 +18,55 @@ const tabs = ['Profile', 'Security', 'Subscription', 'Integrations'];
 const ProfileTab = () => (
   <div className="space-y-10">
     {/* Personal Information Card */}
-    <div className="bg-white rounded-[32px] p-10 border border-slate-100 shadow-sm space-y-10 relative overflow-hidden">
+    <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-8 relative overflow-hidden">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-slate-900">Personal Information</h2>
-        <Button variant="outline" size="sm" className="h-9 px-5 rounded-full text-[11px] font-bold gap-2 bg-[#FFF1F1] text-[#E11D48] border-none hover:bg-[#FFE4E4] transition-colors shadow-none">
+        <h2 className="text-xl font-semibold text-foreground">Personal Information</h2>
+        <Button variant="outline" size="sm" className="h-9 px-4 rounded-xl text-[11px] font-semibold gap-2 bg-primary/5 text-primary border-none hover:bg-primary/10 transition-colors shadow-none">
           <Edit3 className="w-3.5 h-3.5" />
           Edit
         </Button>
       </div>
 
-      <div className="flex flex-col space-y-10">
-        <div className="w-48 h-32 bg-[#FFF1F1] rounded-[28px] border-2 border-dashed border-red-100 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-[#FFE4E4] transition-all group">
-          <Upload className="w-5 h-5 text-[#E11D48]" />
+      <div className="flex flex-col space-y-8">
+        <div className="w-48 h-32 bg-primary/5 rounded-2xl border-2 border-dashed border-primary/20 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-primary/10 transition-all group">
+          <Upload className="w-5 h-5 text-primary" />
           <div className="text-center">
-            <p className="text-[12px] font-bold text-[#E11D48]">Upload image</p>
-            <p className="text-[9px] font-medium text-[#E11D48]/60">Recommended: 1000 × 300px</p>
+            <p className="text-xs font-semibold text-primary">Upload image</p>
+            <p className="text-[10px] font-medium text-primary/60">Recommended: 1000 × 300px</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="space-y-3">
-            <Label className="text-sm font-bold text-slate-900">Name</Label>
-            <Input defaultValue="Sarah Amin" className="h-14 bg-white border-slate-200 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-5" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-2">
+            <Label className="text-sm font-semibold text-foreground">Name</Label>
+            <Input defaultValue="Sarah Amin" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 placeholder:text-muted-foreground shadow-none px-4" />
           </div>
-          <div className="space-y-3">
-            <Label className="text-sm font-bold text-slate-900">Email</Label>
-            <Input defaultValue="sara@email.com" className="h-14 bg-white border-slate-200 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-5" />
+          <div className="space-y-2">
+            <Label className="text-sm font-semibold text-foreground">Email</Label>
+            <Input defaultValue="sara@email.com" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 placeholder:text-muted-foreground shadow-none px-4" />
           </div>
         </div>
 
-        <div className="space-y-3">
-          <Label className="text-sm font-bold text-slate-900">Phone</Label>
-          <Input defaultValue="+212 2545658745" className="h-14 bg-white border-slate-200 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none w-full px-5" />
+        <div className="space-y-2">
+          <Label className="text-sm font-semibold text-foreground">Phone</Label>
+          <Input defaultValue="+212 2545658745" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 placeholder:text-muted-foreground shadow-none w-full px-4" />
         </div>
 
-        <Button className="h-14 w-52 bg-[#E11D48] hover:bg-[#BE123C] text-white rounded-full font-bold text-base shadow-xl shadow-red-500/20 transition-all active:scale-[0.98]">
-          Coutinue
+        <Button className="h-12 w-48 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-base shadow-sm transition-all active:scale-[0.98]">
+          Continue
         </Button>
       </div>
     </div>
 
     {/* Delete Account Card */}
-    <div className="bg-white rounded-[32px] p-10 border border-slate-100 shadow-sm space-y-6">
+    <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-6">
       <div className="space-y-1">
-        <h2 className="text-xl font-bold text-slate-900">Delete Account</h2>
-        <p className="text-slate-400 text-sm font-medium">
+        <h2 className="text-xl font-semibold text-foreground">Delete Account</h2>
+        <p className="text-muted-foreground text-sm font-medium">
           Permanently remove your account and all associated data.
         </p>
       </div>
-      <Button variant="outline" className="h-14 px-10 border-[#E11D48] text-[#E11D48] rounded-full font-bold text-sm hover:bg-[#FFF1F1] transition-all border-2">
+      <Button variant="outline" className="h-12 px-8 border-primary text-primary rounded-xl font-semibold text-sm hover:bg-primary/5 transition-all border-2">
         Delete my account
       </Button>
     </div>
@@ -75,51 +75,51 @@ const ProfileTab = () => (
 
 const SecurityTab = () => (
   <div className="space-y-10">
-    <div className="bg-white rounded-[32px] p-10 border border-slate-100 shadow-sm space-y-10">
+    <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-slate-900">Password</h2>
-        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">6 items</span>
+        <h2 className="text-xl font-semibold text-foreground">Password</h2>
+        <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">6 items</span>
       </div>
 
-      <div className="space-y-10">
-        <div className="space-y-3">
-          <Label className="text-sm font-bold text-slate-900">Current Password</Label>
-          <Input type="password" defaultValue="*******" className="h-14 bg-white border-slate-200 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-5" />
+      <div className="space-y-8">
+        <div className="space-y-2">
+          <Label className="text-sm font-semibold text-foreground">Current Password</Label>
+          <Input type="password" defaultValue="*******" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-4" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="space-y-3">
-            <Label className="text-sm font-bold text-slate-900">New Password</Label>
-            <Input type="password" defaultValue="******" className="h-14 bg-white border-slate-200 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-5" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-2">
+            <Label className="text-sm font-semibold text-foreground">New Password</Label>
+            <Input type="password" defaultValue="******" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-4" />
           </div>
-          <div className="space-y-3">
-            <Label className="text-sm font-bold text-slate-900">Confirm New Password</Label>
-            <Input type="password" defaultValue="******" className="h-14 bg-white border-slate-200 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-5" />
+          <div className="space-y-2">
+            <Label className="text-sm font-semibold text-foreground">Confirm New Password</Label>
+            <Input type="password" defaultValue="******" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-4" />
           </div>
         </div>
 
-        <Button className="h-14 w-52 bg-[#E11D48] hover:bg-[#BE123C] text-white rounded-full font-bold text-base shadow-xl shadow-red-500/20 transition-all active:scale-[0.98]">
+        <Button className="h-12 w-48 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-base shadow-sm transition-all active:scale-[0.98]">
           Update Password
         </Button>
       </div>
     </div>
 
-    <div className="bg-white rounded-[32px] p-10 border border-slate-100 shadow-sm space-y-8">
-      <h2 className="text-xl font-bold text-slate-900">Notifications</h2>
+    <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-8">
+      <h2 className="text-xl font-semibold text-foreground">Notifications</h2>
       <div className="space-y-2">
         <div className="flex items-center justify-between py-6 border-b border-slate-50 last:border-0">
           <div className="space-y-1.5">
-            <h4 className="text-base font-bold text-slate-800">Email Notifications</h4>
-            <p className="text-xs font-medium text-slate-400">Get notified about new bookings via email</p>
+            <h4 className="text-base font-medium text-foreground">Email Notifications</h4>
+            <p className="text-xs font-medium text-muted-foreground">Get notified about new bookings via email</p>
           </div>
-          <Switch defaultChecked className="data-[state=checked]:bg-[#E11D48]" />
+          <Switch defaultChecked className="data-[state=checked]:bg-primary" />
         </div>
         <div className="flex items-center justify-between py-6 border-b border-slate-50 last:border-0">
           <div className="space-y-1.5">
-            <h4 className="text-base font-bold text-slate-800">Booking Reminders</h4>
-            <p className="text-xs font-medium text-slate-400">Remind customers about upcoming bookings</p>
+            <h4 className="text-base font-medium text-foreground">Booking Reminders</h4>
+            <p className="text-xs font-medium text-muted-foreground">Remind customers about upcoming bookings</p>
           </div>
-          <Switch defaultChecked className="data-[state=checked]:bg-[#E11D48]" />
+          <Switch defaultChecked className="data-[state=checked]:bg-primary" />
         </div>
       </div>
     </div>
@@ -128,38 +128,38 @@ const SecurityTab = () => (
 
 const SubscriptionTab = () => (
   <div className="space-y-10">
-    <div className="bg-white rounded-[32px] p-10 border border-slate-100 shadow-sm space-y-10">
+    <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-10">
       <div className="flex items-center justify-between">
         <div className="space-y-1.5">
-          <h2 className="text-xl font-bold text-slate-900">Current Plan</h2>
-          <p className="text-slate-400 text-sm font-medium tracking-tight">Renews February 27, 2025 · AED 199/month</p>
+          <h2 className="text-xl font-semibold text-foreground">Current Plan</h2>
+          <p className="text-muted-foreground text-sm font-medium tracking-tight">Renews February 27, 2025 · AED 199/month</p>
         </div>
-        <div className="px-4 py-1.5 bg-[#E11D48] rounded-full text-[10px] font-black text-white uppercase tracking-widest shadow-md shadow-red-500/20">Active</div>
+        <div className="px-4 py-1.5 bg-primary rounded-full text-[10px] font-bold text-primary-foreground uppercase tracking-widest shadow-sm">Active</div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="space-y-2">
-          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Monthly Cost</p>
-          <p className="text-[32px] font-black text-slate-900">$199</p>
+          <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">Monthly Cost</p>
+          <p className="text-3xl font-bold text-foreground">$199</p>
         </div>
         <div className="space-y-2">
-          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Staff Limit</p>
-          <p className="text-[32px] font-black text-slate-900">5 staff</p>
+          <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">Staff Limit</p>
+          <p className="text-3xl font-bold text-foreground">5 staff</p>
         </div>
         <div className="space-y-2">
-          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Next Billing Date</p>
-          <p className="text-[32px] font-black text-slate-900">Apr 1, 2026</p>
+          <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">Next Billing Date</p>
+          <p className="text-3xl font-bold text-foreground">Apr 1, 2026</p>
         </div>
       </div>
 
-      <div className="bg-slate-50/80 rounded-[28px] p-8 flex items-center justify-between">
+      <div className="bg-slate-50/80 rounded-2xl p-8 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center">
-            <CheckCircle2 className="w-6 h-6 text-slate-300" />
+          <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center">
+            <CheckCircle2 className="w-6 h-6 text-primary" />
           </div>
-          <p className="text-[15px] font-bold text-slate-600">Currently using: <span className="text-slate-900">Premium</span></p>
+          <p className="text-[15px] font-medium text-foreground">Currently using: <span className="font-semibold">Premium</span></p>
         </div>
-        <Button className="h-14 px-10 bg-[#E11D48] hover:bg-[#BE123C] text-white rounded-2xl font-bold text-sm shadow-xl shadow-red-500/10 transition-all active:scale-[0.98]">
+        <Button className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-sm shadow-sm transition-all active:scale-[0.98]">
           Upgrade your plan
         </Button>
       </div>
@@ -168,25 +168,25 @@ const SubscriptionTab = () => (
 );
 
 const IntegrationsTab = () => (
-  <div className="space-y-10">
+  <div className="space-y-8">
     <div className="flex items-center justify-between">
       <div className="space-y-1.5">
-        <h2 className="text-[28px] font-black text-slate-900 tracking-tight">Integrations</h2>
-        <p className="text-slate-400 text-sm font-medium">Connect your favorite tools to streamline your business workflow.</p>
+        <h2 className="text-2xl font-bold text-foreground tracking-tight">Integrations</h2>
+        <p className="text-muted-foreground text-sm font-medium">Connect your favorite tools to streamline your business workflow.</p>
       </div>
-      <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 shadow-sm">
+      <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-100 shadow-sm">
         <div className="w-2 h-2 rounded-full bg-emerald-500" />
-        <span className="text-[11px] font-bold text-slate-500">3 connected</span>
+        <span className="text-[11px] font-semibold text-foreground">3 connected</span>
       </div>
     </div>
 
     <div className="relative">
-      <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-300" />
-      <Input placeholder="Search integrations..." className="h-14 pl-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-sm placeholder:text-slate-300" />
+      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+      <Input placeholder="Search integrations..." className="h-12 pl-11 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none placeholder:text-muted-foreground" />
     </div>
 
-    <div className="space-y-8">
-      <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.1em]">VIDEO MEETINGS</h3>
+    <div className="space-y-6">
+      <h3 className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.1em]">VIDEO MEETINGS</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { 
@@ -217,13 +217,13 @@ const IntegrationsTab = () => (
             desc: 'Accept appointments day and night directly from your Instagram profile.' 
           },
         ].map((item) => (
-          <div key={item.name} className="bg-white rounded-[28px] p-8 border border-slate-100 shadow-sm hover:border-red-100 transition-all group flex flex-col min-h-[180px]">
+          <div key={item.name} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:border-primary/20 transition-all group flex flex-col min-h-[160px]">
             <div className="flex items-center justify-between mb-6">
               {item.icon}
-              <div className="px-3 py-1 bg-[#F0FDF4] text-[#16A34A] rounded-lg text-[10px] font-black uppercase tracking-widest">Upgrade</div>
+              <div className="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-[10px] font-semibold uppercase tracking-widest">Upgrade</div>
             </div>
-            <h4 className="text-lg font-black text-slate-900 mb-2">{item.name}</h4>
-            <p className="text-xs leading-[1.6] text-slate-400 font-medium">{item.desc}</p>
+            <h4 className="text-lg font-semibold text-foreground mb-2">{item.name}</h4>
+            <p className="text-xs leading-[1.6] text-muted-foreground font-medium">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -232,29 +232,29 @@ const IntegrationsTab = () => (
 );
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState('Integrations');
+  const [activeTab, setActiveTab] = useState('Profile');
 
   return (
-    <div className="p-6 lg:p-10 space-y-10 bg-[#F8FAFC]/50 min-h-screen">
+    <div className="p-6 lg:p-10 space-y-8 bg-[#F8FAFC]/50 min-h-screen">
       {/* Header */}
-      <div className="space-y-1.5">
-        <h1 className="text-[32px] font-black text-slate-900 tracking-tight">Settings</h1>
-        <p className="text-slate-400 text-base font-medium">
+      <div className="space-y-1">
+        <h1 className="text-3xl font-bold text-foreground tracking-tight">Settings</h1>
+        <p className="text-muted-foreground text-sm font-medium">
           Manage your account settings and preferences
         </p>
       </div>
 
       {/* Tabs Navigation */}
-      <div className="bg-white p-2 rounded-2xl border border-slate-100 shadow-sm flex items-center w-full">
+      <div className="bg-white p-1 rounded-lg border border-slate-200 shadow-sm flex items-center w-full">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={cn(
-              "flex-1 h-14 rounded-xl text-[15px] font-bold transition-all",
+              "flex-1 h-10 rounded-md text-sm font-medium transition-all",
               activeTab === tab 
-                ? "bg-[#E11D48] text-white" 
-                : "text-slate-500 hover:bg-slate-50"
+                ? "bg-primary text-primary-foreground shadow-sm" 
+                : "text-muted-foreground hover:bg-slate-50 hover:text-foreground"
             )}
           >
             {tab}

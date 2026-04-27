@@ -7,33 +7,37 @@ import {
   Award, 
   DollarSign, 
   ArrowRight,
-  UserCheck
+  Users
 } from 'lucide-react';
 
 const stats = [
   {
     title: "WEEKLY REVENUE",
     value: "AED 14,900",
-    icon: <DollarSign className="w-5 h-5 text-primary" />,
-    bgColor: "bg-primary/10",
+    icon: <DollarSign className="w-5 h-5 text-[#E11D48]" />,
+    bgColor: "bg-[#FFF1F1]",
+    borderColor: "border-slate-200/60",
   },
   {
     title: "TODAY'S BOOKINGS",
     value: "6",
     icon: <CalendarDays className="w-5 h-5 text-blue-500" />,
-    bgColor: "bg-blue-500/10",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-100",
   },
   {
     title: "ACTIVE CUSTOMERS",
     value: "6",
-    icon: <UserCheck className="w-5 h-5 text-emerald-500" />,
-    bgColor: "bg-emerald-500/10",
+    icon: <Users className="w-5 h-5 text-emerald-500" />,
+    bgColor: "bg-emerald-50",
+    borderColor: "border-emerald-100",
   },
   {
     title: "STAFF AVG RATING",
     value: "4.8",
     icon: <Award className="w-5 h-5 text-orange-500" />,
-    bgColor: "bg-orange-500/10",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-100",
   },
 ];
 
@@ -82,11 +86,11 @@ const appointments = [
 
 export default function Page() {
   return (
-    <div className="p-4 lg:p-8 space-y-6 lg:space-y-8 bg-background min-h-screen">
+    <div className="px-4 lg:px-8 pb-4 lg:pb-8 space-y-6 lg:space-y-8 bg-background min-h-[calc(100vh-4rem)]">
       {/* Header Section */}
       <div className="space-y-1">
-        <h1 className="text-2xl lg:text-3xl font-bold text-foreground tracking-tight">Dashboard Overview</h1>
-        <p className="text-muted-foreground flex flex-wrap items-center gap-2 text-xs lg:text-sm">
+        <h1 className="text-[28px] font-bold text-slate-900 tracking-tight">Dashboard Overview</h1>
+        <p className="text-slate-500 flex flex-wrap items-center gap-2 text-sm font-medium">
           <span>Monday, 27 January 2025</span>
           <span className="hidden sm:inline">·</span>
           <span>Good morning, Thierry! 👋</span>
@@ -94,35 +98,31 @@ export default function Page() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, i) => (
-          <Card key={i} className="border-border/50 shadow-sm overflow-hidden">
-            <CardContent className="p-4 lg:p-6">
-              <div className="flex justify-between items-start">
-                <div className="space-y-1 lg:space-y-2">
-                  <p className="text-[10px] font-bold text-muted-foreground tracking-wider uppercase">
-                    {stat.title}
-                  </p>
-                  <p className="text-2xl lg:text-3xl font-bold text-foreground">{stat.value}</p>
-                </div>
-                <div className={`p-2 lg:p-2.5 rounded-xl ${stat.bgColor}`}>
-                  {stat.icon}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div key={i} className={`bg-white rounded-[24px] border ${stat.borderColor} p-6 shadow-sm flex items-center justify-between transition-all hover:shadow-md`}>
+            <div className="space-y-2">
+              <p className="text-[11px] font-bold text-slate-500 tracking-widest uppercase">
+                {stat.title}
+              </p>
+              <p className="text-[28px] font-bold text-slate-900 leading-none">{stat.value}</p>
+            </div>
+            <div className={`w-12 h-12 rounded-full flex items-center justify-center ${stat.bgColor}`}>
+              {stat.icon}
+            </div>
+          </div>
         ))}
       </div>
 
       {/* Upcoming Appointments */}
-      <Card className="border-border/50 shadow-sm">
-        <CardHeader className="flex flex-row items-center justify-between p-4 lg:p-6">
-          <CardTitle className="text-base lg:text-lg font-bold">Upcoming Appointments Today</CardTitle>
-          <Button variant="link" className="text-primary hover:text-primary/90 font-semibold p-0 flex items-center gap-1 text-xs lg:text-sm">
+      <div className="bg-white rounded-[24px] border border-slate-100 shadow-sm overflow-hidden">
+        <div className="flex flex-row items-center justify-between p-6 border-b border-slate-50">
+          <h2 className="text-lg font-bold text-slate-900">Upcoming Appointments Today</h2>
+          <Button variant="link" className="text-[#E11D48] hover:text-[#BE123C] font-semibold p-0 flex items-center gap-1 text-sm">
             View all <ArrowRight className="w-4 h-4" />
           </Button>
-        </CardHeader>
-        <CardContent className="px-0 pb-2 lg:pb-6">
+        </div>
+        <div className="px-0 pb-2 lg:pb-6">
           <div className="divide-y divide-border/50">
             {appointments.map((appointment) => (
               <div key={appointment.id} className="flex flex-col sm:flex-row sm:items-center justify-between px-4 lg:px-6 py-4 hover:bg-muted/50 transition-colors gap-4">
@@ -170,8 +170,8 @@ export default function Page() {
               </div>
             ))}
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 }

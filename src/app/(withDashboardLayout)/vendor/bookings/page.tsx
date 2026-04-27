@@ -140,14 +140,14 @@ const FilterTab = ({
   <div 
     onClick={onClick}
     className={cn(
-      "flex items-center gap-3 px-6 py-2.5 rounded-2xl cursor-pointer transition-all shrink-0",
-      active ? "bg-[#E11D48] text-white shadow-lg shadow-red-500/10" : "text-slate-500 hover:bg-slate-50"
+      "flex items-center gap-3 px-6 py-2.5 rounded-xl cursor-pointer transition-all shrink-0",
+      active ? "bg-primary text-primary-foreground shadow-sm" : "text-slate-500 hover:bg-slate-50"
     )}
   >
-    <span className="text-sm font-bold whitespace-nowrap">{label}</span>
+    <span className="text-[15px] font-medium whitespace-nowrap">{label}</span>
     <span className={cn(
-      "flex items-center justify-center w-6 h-6 rounded-full text-[11px] font-bold",
-      active ? "bg-white/20" : "bg-slate-100 text-slate-400"
+      "flex items-center justify-center w-6 h-6 rounded-full text-[12px] font-bold",
+      active ? "bg-white/20 text-white" : "bg-slate-100 text-muted-foreground"
     )}>
       {count}
     </span>
@@ -165,7 +165,7 @@ const BookingCard = ({ booking, activeTab }: { booking: Booking, activeTab: Book
       
       <div className="space-y-1">
         <div className="flex items-center gap-3">
-          <h3 className="text-base font-bold text-slate-800">{booking.customer}</h3>
+          <h3 className="text-base font-bold text-foreground">{booking.customer}</h3>
           <span className={cn(
             "inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[11px] font-bold border",
             booking.status === 'Pending' ? "bg-[#FFF7ED] border-[#FFEDD5] text-[#F97316]" :
@@ -184,18 +184,18 @@ const BookingCard = ({ booking, activeTab }: { booking: Booking, activeTab: Book
           </span>
         </div>
         
-        <p className="text-sm font-medium text-slate-600">{booking.service}</p>
+        <p className="text-sm font-medium text-muted-foreground">{booking.service}</p>
         
         <div className="flex items-center gap-4 pt-1 opacity-40">
-          <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-900">
+          <div className="flex items-center gap-1.5 text-[11px] font-medium text-foreground">
             <CalendarIcon className="w-3 h-3" />
             {booking.date}
           </div>
-          <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-900">
+          <div className="flex items-center gap-1.5 text-[11px] font-medium text-foreground">
             <Clock className="w-3 h-3" />
             {booking.time}
           </div>
-          <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-900">
+          <div className="flex items-center gap-1.5 text-[11px] font-medium text-foreground">
             <User className="w-3 h-3" />
             {booking.staff}
           </div>
@@ -205,13 +205,13 @@ const BookingCard = ({ booking, activeTab }: { booking: Booking, activeTab: Book
 
     <div className="flex items-center justify-between md:justify-end w-full md:w-auto gap-6 md:gap-10">
       <div className="text-right">
-        <p className="text-lg font-black text-slate-900">{booking.price}</p>
-        <p className="text-[11px] text-slate-400 font-medium">{booking.duration}</p>
+        <p className="text-lg font-black text-foreground">{booking.price}</p>
+        <p className="text-[11px] text-muted-foreground font-medium">{booking.duration}</p>
       </div>
 
       <div className="flex items-center gap-2">
         {activeTab === 'History' ? (
-          <Button variant="ghost" size="icon" className="h-10 w-10 text-slate-300">
+          <Button variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground">
             <ChevronRight className="w-5 h-5" />
           </Button>
         ) : (
@@ -253,8 +253,8 @@ export default function BookingsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-0.5">
-          <h1 className="text-[28px] font-bold text-slate-900 tracking-tight">Bookings</h1>
-          <p className="text-slate-400 text-sm font-medium">
+          <h1 className="text-[28px] font-bold text-foreground tracking-tight">Bookings</h1>
+          <p className="text-muted-foreground text-sm font-medium">
             10 total bookings · Manage and track appointments
           </p>
         </div>
@@ -262,7 +262,7 @@ export default function BookingsPage() {
       </div>
 
       {/* Tabs Filter Container */}
-      <div className="bg-white rounded-[24px] p-1.5 inline-flex items-center gap-1 border border-slate-100 shadow-sm overflow-x-auto max-w-full scrollbar-none">
+      <div className="bg-white rounded-2xl p-1.5 inline-flex items-center gap-1 border border-slate-100 shadow-sm overflow-x-auto max-w-full scrollbar-none">
         {(['Pending', 'Waiting', 'Confirmed', 'History'] as BookingStatus[]).map((tab) => (
           <FilterTab 
             key={tab}
@@ -276,10 +276,10 @@ export default function BookingsPage() {
 
       {/* Search Bar */}
       <div className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <Input 
           placeholder="Search by client or service..." 
-          className="h-11 pl-11 pr-4 bg-white border-slate-100 rounded-lg text-sm placeholder:text-slate-300 focus-visible:ring-primary/20 shadow-none"
+          className="h-12 pl-12 pr-4 bg-white border border-slate-100 rounded-2xl text-[15px] placeholder:text-muted-foreground focus-visible:ring-primary/20 shadow-sm"
         />
       </div>
 
@@ -292,10 +292,10 @@ export default function BookingsPage() {
         ) : (
           <div className="bg-white rounded-[20px] p-12 border border-dashed border-slate-200 flex flex-col items-center justify-center text-center">
             <div className="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center mb-4">
-              <CalendarIcon className="w-8 h-8 text-slate-300" />
+              <CalendarIcon className="w-8 h-8 text-muted-foreground" />
             </div>
-            <h3 className="text-lg font-bold text-slate-800">No {activeTab} bookings</h3>
-            <p className="text-slate-400 text-sm max-w-[250px] mt-1">There are currently no bookings in the {activeTab.toLowerCase()} list.</p>
+            <h3 className="text-lg font-bold text-foreground">No {activeTab} bookings</h3>
+            <p className="text-muted-foreground text-sm max-w-[250px] mt-1">There are currently no bookings in the {activeTab.toLowerCase()} list.</p>
           </div>
         )}
       </div>
