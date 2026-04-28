@@ -8,12 +8,10 @@ import {
   Calendar as CalendarIcon,
   Clock,
   User,
-  Plus,
   ChevronRight
 } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
-import { AppointmentModal } from '@/components/calendar/appointment-modal';
 
 type BookingStatus = 'Pending' | 'Waiting' | 'Confirmed' | 'History';
 

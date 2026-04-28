@@ -4,10 +4,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Plus, BookOpen } from 'lucide-react';
 import { 
-  Tooltip, 
-  TooltipContent, 
-  TooltipProvider, 
-  TooltipTrigger 
+  TooltipProvider 
 } from "@/components/ui/tooltip";
 import { AppointmentModal } from '@/components/calendar/appointment-modal';
 import { CalendarGrid } from '@/components/calendar/calendar-grid';

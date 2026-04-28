@@ -8,10 +8,7 @@ import {
   Upload, 
   ChevronRight, 
   Plus,
-  Target,
-  Image as ImageIcon,
-  Clock,
-  X
+  Clock
 } from 'lucide-react';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
@@ -24,7 +21,6 @@ import {
   DialogTrigger,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { cn } from '@/lib/utils';
 
 const workingDays = [
   { day: "Sunday", enabled: true },
@@ -158,7 +154,7 @@ export default function YourBrandPage() {
         <div className="space-y-3">
           <div className="bg-slate-50/50 rounded-2xl p-4 flex items-center justify-between">
             <div className="space-y-1">
-              <h4 className="text-sm font-medium text-foreground">Men's Haircut</h4>
+              <h4 className="text-sm font-medium text-foreground">Men&apos;s Haircut</h4>
               <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground">
                 <span>$30</span>
                 <div className="flex items-center gap-1.5">

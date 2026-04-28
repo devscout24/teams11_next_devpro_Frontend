@@ -8,7 +8,6 @@ import {
   Search, 
   ChevronRight,
   Send,
-  X,
   ChevronDown,
   Clock,
   Scissors,
@@ -35,7 +34,6 @@ import {
 } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { cn } from '@/lib/utils';
 
 const staffMembers = [
   {
@@ -193,7 +191,7 @@ const StaffManagementSheet = ({ staff, isOpen, onOpenChange }: { staff: typeof s
                 </div>
 
                 <p className="text-xs text-muted-foreground font-medium leading-relaxed">
-                  Services you're certified to perform. <br />
+                  Services you&apos;re certified to perform. <br />
                   Contact admin to update.
                 </p>
               </div>

@@ -1,11 +1,10 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import { 
-  CalendarDays, 
-  Award, 
-  DollarSign, 
+import {
+  CalendarDays,
+  Award,
+  DollarSign,
   ArrowRight,
   Users
 } from 'lucide-react';
@@ -145,12 +144,12 @@ export default function Page() {
                   </div>
 
                   <div className="flex items-center gap-3 lg:gap-4 sm:w-[200px] lg:w-[240px] justify-end">
-                    <Badge 
-                      variant="secondary" 
+                    <Badge
+                      variant="secondary"
                       className={`
                         rounded-full px-2 lg:px-3 py-1 font-medium text-[9px] lg:text-[10px] bg-transparent border whitespace-nowrap
-                        ${appointment.status === 'Confirmed' 
-                          ? 'text-emerald-600 border-emerald-100 bg-emerald-50/50' 
+                        ${appointment.status === 'Confirmed'
+                          ? 'text-emerald-600 border-emerald-100 bg-emerald-50/50'
                           : 'text-orange-600 border-orange-100 bg-orange-50/50'
                         }
                       `}
@@ -158,9 +157,9 @@ export default function Page() {
                       <div className={`w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full mr-1 lg:mr-1.5 ${appointment.status === 'Confirmed' ? 'bg-emerald-500' : 'bg-orange-500'}`} />
                       {appointment.status}
                     </Badge>
-                    
-                    <Button 
-                      size="sm" 
+
+                    <Button
+                      size="sm"
                       className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg h-8 px-3 lg:px-4 text-[11px] lg:text-xs font-semibold whitespace-nowrap"
                     >
                       Check-in
@@ -175,4 +174,3 @@ export default function Page() {
     </div>
   );
 }
-

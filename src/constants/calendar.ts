@@ -1,4 +1,3 @@
-import { CalendarDays, Clock, DollarSign, Award } from 'lucide-react';
 
 export const CALENDAR_DAYS = [
   { name: 'Mon', date: 27, current: true },

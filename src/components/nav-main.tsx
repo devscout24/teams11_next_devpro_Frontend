@@ -5,7 +5,6 @@ import {usePathname} from 'next/navigation';
 import {
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -29,13 +28,13 @@ interface NavMainProps {
 export function NavMain({items, role}: NavMainProps) {
   const pathname = usePathname();
 
-  const groupLabel = role === 'vendor' ? 'Vendor Menu' : 'User Menu';
+  // const groupLabel = role === 'vendor' ? 'Vendor Menu' : 'User Menu';
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel className="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-4 mb-1">
+      {/* <SidebarGroupLabel className="text-[10px] font-bold uppercase tracking-widest text-gray-400 px-4 mb-1">
         {groupLabel}
-      </SidebarGroupLabel>
+      </SidebarGroupLabel> */}
       <SidebarGroupContent>
         <SidebarMenu className="gap-1">
           {items.map((item) => {
@@ -52,7 +51,7 @@ export function NavMain({items, role}: NavMainProps) {
                   className={cn(
                     'flex items-center gap-3 px-4 py-6 rounded-xl text-[14px] font-medium transition-all duration-200 cursor-pointer',
                     isActive
-                      ? 'bg-[#FFF1F1] text-[#D32F2F] font-semibold'
+                      ? 'bg-[#FFF1F1] text-primary font-semibold'
                       : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900',
                   )}>
                   <Link
@@ -61,12 +60,12 @@ export function NavMain({items, role}: NavMainProps) {
                     <item.icon
                       className={cn(
                         'w-[18px] h-[18px] shrink-0',
-                        isActive ? 'text-[#D32F2F]' : 'text-gray-400',
+                        isActive ? 'text-primary' : 'text-gray-400',
                       )}
                     />
                     <span>{item.title}</span>
                     {isActive && (
-                      <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#D32F2F]" />
+                      <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />
                     )}
                   </Link>
                 </SidebarMenuButton>

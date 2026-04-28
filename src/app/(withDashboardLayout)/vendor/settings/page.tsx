@@ -202,6 +202,7 @@ const IntegrationsTab = () => (
             name: 'Google Meet', 
             icon: (
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden border border-slate-50">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" className="w-6 h-6" alt="Meet" />
               </div>
             ), 

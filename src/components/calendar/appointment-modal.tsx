@@ -6,7 +6,6 @@ import {
   Clock,
   Users,
   Video,
-  User as UserIcon,
   Podcast,
 } from 'lucide-react';
 import {

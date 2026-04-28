@@ -6,8 +6,7 @@ import {
   Users, 
   CheckCircle2, 
   Gift,
-  Copy,
-  Share2
+  Copy
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
@@ -24,7 +23,7 @@ const StatCard = ({
   title: string, 
   value: string, 
   label: string, 
-  icon: any, 
+  icon: React.ElementType, 
   colorClass: string,
   iconColor: string,
   textColor: string
