@@ -88,10 +88,10 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
               className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-semibold text-xl shrink-0">
-                  A
+                  T
                 </div>
                 <div className="flex flex-col items-start">
-                  <span className="text-sm  text-gray-900">A H Shobuj</span>
+                  <span className="text-sm  text-gray-900">Thierry Pam</span>
                   <span className="text-[11px] font-medium text-gray-500">
                     Pro Plan
                   </span>

@@ -1,4 +1,4 @@
-﻿import StaffHome from './_components/StaffHome';
+import StaffHome from './_components/StaffHome';
 
 export default function Page() {
   return (

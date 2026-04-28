@@ -1,11 +1,10 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -65,9 +64,9 @@ export function NavMain({items, role}: NavMainProps) {
                       )}
                     />
                     <span>{item.title}</span>
-                    {isActive && (
+                    {/* {isActive && (
                       <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />
-                    )}
+                    )} */}
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
