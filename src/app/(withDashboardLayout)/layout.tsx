@@ -1,11 +1,11 @@
 'use client';
 
-import { AppSidebar } from '@/components/app-sidebar';
-import { SiteHeader } from '@/components/site-header';
-import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
-import { useRole } from '@/hooks/use-role';
+import {AppSidebar} from '@/components/app-sidebar';
+import {SiteHeader} from '@/components/site-header';
+import {SidebarInset, SidebarProvider} from '@/components/ui/sidebar';
+import {useRole} from '@/hooks/use-role';
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout = ({children}: {children: React.ReactNode}) => {
   const role = useRole();
 
   return (

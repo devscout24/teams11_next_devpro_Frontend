@@ -1,22 +1,9 @@
-import SelectMonth from "@/components/shared/common/SelectMonth";
+import StaffHome from './_components/StaffHome';
 
 export default function Page() {
   return (
-    <section>
-      <div className="flex flex-1 flex-col">
-        <div className="@container/main flex flex-1 flex-col gap-2">
-          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-            <div className="px-4 lg:px-6">
-              <div className="flex justify-between items-center mb-4">
-                <p className="text-xl font-medium">Employee Management</p>
-                <div className="flex gap-1">
-                  <SelectMonth />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section className="p-6">
+      <StaffHome />
     </section>
   );
 }

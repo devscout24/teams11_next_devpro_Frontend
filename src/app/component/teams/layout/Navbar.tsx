@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import React, {useState} from 'react';
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+import {Menu, X, Heart} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {cn} from '@/lib/utils';
 
 const navLinks = [
-  { href: "/marketplace", label: "Marketplace" },
-  { href: "/features", label: "Features" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/support", label: "Support" },
+  {href: '/marketplace', label: 'Marketplace'},
+  {href: '/features', label: 'Features'},
+  {href: '/pricing', label: 'Pricing'},
+  {href: '/support', label: 'Support'},
 ];
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             {/* Logo */}
             <Link href="/features" className="shrink-0">
-              <span className="text-xl font-bold text-[#E8302A] tracking-tight">
+              <span className="text-xl font-bold text-primary tracking-tight">
                 BookingPam
               </span>
             </Link>
@@ -37,12 +37,11 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "px-4 py-1.5 rounded-full text-sm font-medium transition-all",
+                    'px-4 py-1.5 rounded-full text-sm font-medium transition-all',
                     pathname === link.href
-                      ? "bg-white text-neutral-900 shadow-sm"
-                      : "text-neutral-600 hover:text-neutral-900"
-                  )}
-                >
+                      ? 'bg-white text-neutral-900 shadow-sm'
+                      : 'text-neutral-600 hover:text-neutral-900',
+                  )}>
                   {link.label}
                 </Link>
               ))}
@@ -51,20 +50,27 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="hidden md:flex items-center gap-3">
-            <button className="p-2 text-neutral-500 hover:text-[#E8302A] cursor-pointer transition-colors">
+            <button className="p-2 text-neutral-500 hover:text-primary cursor-pointer transition-colors">
               <Heart className="h-5 w-5" />
             </button>
-            <Button size="sm" className="rounded-full px-5 bg-[#E8302A] cursor-pointer">
-              Login
-            </Button>
+            <Link href={'/auth/login'}>
+              <Button
+                size="sm"
+                className="rounded-full px-5 bg-primary cursor-pointer">
+                Login
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             className="md:hidden p-2 text-neutral-600 hover:text-neutral-900 cursor-pointer"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </div>
@@ -78,17 +84,18 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
+                'block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors',
                 pathname === link.href
-                  ? "bg-neutral-100 text-neutral-900"
-                  : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
-              )}
-            >
+                  ? 'bg-neutral-100 text-neutral-900'
+                  : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900',
+              )}>
               {link.label}
             </Link>
           ))}
           <div className="pt-3 border-t border-neutral-100">
-            <Button className="w-full rounded-full bg-[#E8302A]">Login</Button>
+            <Link href={'/auth/login'}>
+              <Button className="w-full rounded-full bg-primary">Login</Button>
+            </Link>
           </div>
         </div>
       )}
