@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Loader2, CheckCircle2 } from "lucide-react";
+import {useState} from 'react';
+import {useForm} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {z} from 'zod';
+import {Loader2, CheckCircle2} from 'lucide-react';
 
 import {
   Form,
@@ -13,28 +13,28 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/form';
+import {Input} from '@/components/ui/input';
+import {Textarea} from '@/components/ui/textarea';
+import {Button} from '@/components/ui/button';
 
 const formSchema = z.object({
   firstName: z
     .string()
-    .min(2, { message: "First name must be at least 2 characters." })
-    .max(50, { message: "First name must not exceed 50 characters." }),
+    .min(2, {message: 'First name must be at least 2 characters.'})
+    .max(50, {message: 'First name must not exceed 50 characters.'}),
   email: z
     .string()
-    .min(1, { message: "Email is required." })
-    .email({ message: "Please enter a valid email address." }),
+    .min(1, {message: 'Email is required.'})
+    .email({message: 'Please enter a valid email address.'}),
   subject: z
     .string()
-    .min(5, { message: "Subject must be at least 5 characters." })
-    .max(100, { message: "Subject must not exceed 100 characters." }),
+    .min(5, {message: 'Subject must be at least 5 characters.'})
+    .max(100, {message: 'Subject must not exceed 100 characters.'}),
   message: z
     .string()
-    .min(20, { message: "Message must be at least 20 characters." })
-    .max(1000, { message: "Message must not exceed 1000 characters." }),
+    .min(20, {message: 'Message must be at least 20 characters.'})
+    .max(1000, {message: 'Message must not exceed 1000 characters.'}),
 });
 
 type ContactFormValues = z.infer<typeof formSchema>;
@@ -45,20 +45,20 @@ export function ContactForm() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      email: "",
-      subject: "",
-      message: "",
+      firstName: '',
+      email: '',
+      subject: '',
+      message: '',
     },
   });
 
-  const { isSubmitting } = form.formState;
+  const {isSubmitting} = form.formState;
 
   function onSubmit(values: ContactFormValues) {
     // Simulate async submission
     return new Promise<void>((resolve) => {
       setTimeout(() => {
-        console.log("📬 Contact Form Submitted:", values);
+        console.log('📬 Contact Form Submitted:', values);
         console.table(values);
         setSubmitted(true);
         resolve();
@@ -74,15 +74,15 @@ export function ContactForm() {
         </div>
         <h3 className="text-lg font-semibold text-gray-900">Message Sent!</h3>
         <p className="text-sm text-gray-500 max-w-xs">
-          Thanks for reaching out. We&apos;ll get back to you as soon as possible.
+          Thanks for reaching out. We&apos;ll get back to you as soon as
+          possible.
         </p>
         <button
           onClick={() => {
             setSubmitted(false);
             form.reset();
           }}
-          className="mt-2 text-sm text-[#E8302A] underline underline-offset-2 hover:opacity-80 transition-opacity"
-        >
+          className="mt-2 text-sm text-primary underline underline-offset-2 hover:opacity-80 transition-opacity">
           Send another message
         </button>
       </div>
@@ -96,7 +96,7 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="firstName"
-          render={({ field }) => (
+          render={({field}) => (
             <FormItem>
               <FormLabel>First Name</FormLabel>
               <FormControl>
@@ -111,7 +111,7 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="email"
-          render={({ field }) => (
+          render={({field}) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
@@ -126,7 +126,7 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="subject"
-          render={({ field }) => (
+          render={({field}) => (
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
@@ -141,7 +141,7 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="message"
-          render={({ field }) => (
+          render={({field}) => (
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
@@ -160,15 +160,14 @@ export function ContactForm() {
           type="submit"
           size="lg"
           className="w-full font-semibold tracking-wide"
-          disabled={isSubmitting}
-        >
+          disabled={isSubmitting}>
           {isSubmitting ? (
             <>
               <Loader2 size={16} className="animate-spin" />
               Sending...
             </>
           ) : (
-            "Send Message"
+            'Send Message'
           )}
         </Button>
       </form>
