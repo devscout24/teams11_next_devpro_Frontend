@@ -20,7 +20,7 @@ function Cell({ value }: { value: string | boolean | undefined }) {
 export default function PlanComparison() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 text-center mb-10">
           Plan Comparison
         </h2>

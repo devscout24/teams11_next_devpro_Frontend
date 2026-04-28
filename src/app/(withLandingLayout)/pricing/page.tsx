@@ -1,6 +1,6 @@
-import PlanComparison from "@/app/component/teams/pricing/PlanComparison";
-import PricingCards from "@/app/component/teams/pricing/PricingCards";
-import PricingFAQ from "@/app/component/teams/pricing/PricingFAQ";
+import PlanComparison from "@/app/(withLandingLayout)/pricing/_components/PlanComparison";
+import PricingCards from "@/app/(withLandingLayout)/pricing/_components/PricingCards";
+import PricingFAQ from "@/app/(withLandingLayout)/pricing/_components/PricingFAQ";
 
 export default function PricingPage() {
   return (

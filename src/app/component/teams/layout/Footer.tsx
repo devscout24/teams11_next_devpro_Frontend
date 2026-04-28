@@ -4,11 +4,11 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#fdeee9]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <span className="text-xl font-bold text-brand-red">BookingPam</span>
+            <span className="text-xl font-bold text-[#E73404]">BookingPam</span>
             <p className="mt-3 text-sm text-neutral-600 leading-relaxed">
               The all-in-one platform powering modern service businesses.
             </p>
@@ -78,8 +78,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="bg-brand-red">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div className="bg-[#E73404]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-white/80">
             © 2026 BookingPam. Built for service entrepreneurs.
           </p>

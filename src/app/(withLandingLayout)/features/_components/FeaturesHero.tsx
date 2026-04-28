@@ -4,7 +4,7 @@ import {Button} from '@/components/ui/button';
 export default function FeaturesHero() {
   return (
     <section className="px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="max-w-2xl">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 leading-tight">
             Powerful Features to{' '}
