@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: 'BookingPam',
   description:
     'A fully responsive analytics dashboard featuring dynamic charts, interactive tables, a collapsible sidebar. Built with modern web technologies, it ensures seamless performance across devices.',
+  
+    icons: {
+    icon: '/bookingPam.jpg',
+  },
 };
 
 export default function RootLayout({
