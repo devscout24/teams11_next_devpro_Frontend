@@ -1,5 +1,4 @@
 import React from "react";
-import { CalendarDays, Globe, Star, CreditCard } from "lucide-react";
 import Image from "next/image";
 
 const cards = [
