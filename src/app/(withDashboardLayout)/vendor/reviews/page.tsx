@@ -73,7 +73,7 @@ const ratingBreakdown = [
   { stars: 2, count: 1, percentage: 20 },
   { stars: 1, count: 0, percentage: 0 },
 ];
-
+// New adsd
 const RatingSidebar = () => (
   <div className="bg-white rounded-[32px] p-10 border border-slate-50 shadow-sm space-y-10">
     <div className="text-center space-y-3">
