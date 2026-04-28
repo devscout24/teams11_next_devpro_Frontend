@@ -49,17 +49,17 @@ export default function InviteFriendsPage() {
   };
 
   return (
-    <div className="p-6 lg:p-10 space-y-10 bg-[#F8FAFC]/50 min-h-screen">
+    <div className="p-4 sm:p-6 lg:p-10 space-y-6 sm:space-y-10 bg-[#F8FAFC]/50 min-h-screen">
       {/* Header */}
       <div className="space-y-1">
-        <h1 className="text-[32px] font-bold text-foreground tracking-tight">Refer & Earn Rewards</h1>
-        <p className="text-muted-foreground text-base font-medium">
+        <h1 className="text-[24px] sm:text-[32px] font-bold text-foreground tracking-tight">Refer & Earn Rewards</h1>
+        <p className="text-muted-foreground text-sm sm:text-base font-medium">
           Refer your friend and earn rewards
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         <StatCard 
           title="Total Invited"
           value="8"
@@ -83,31 +83,31 @@ export default function InviteFriendsPage() {
           value="$30"
           label="In credits"
           icon={Gift}
-          colorClass="bg-[#FFF7ED] border-[#FFEDD5]"
+          colorClass="bg-[#FFF7ED] border-[#FFEDD5] sm:col-span-2 md:col-span-1"
           iconColor="text-[#EA580C]"
           textColor="text-[#C2410C]"
         />
       </div>
 
       {/* Referral Link Card */}
-      <div className="bg-primary/5 rounded-2xl p-8 border-none space-y-6">
+      <div className="bg-primary/5 rounded-[20px] sm:rounded-2xl p-5 sm:p-8 border-none space-y-4 sm:space-y-6">
         <div className="space-y-1">
-          <h2 className="text-xl font-bold text-foreground">Your Unique Referral Link</h2>
-          <p className="text-muted-foreground text-sm font-medium">
+          <h2 className="text-[18px] sm:text-xl font-bold text-foreground">Your Unique Referral Link</h2>
+          <p className="text-muted-foreground text-xs sm:text-sm font-medium">
             Share this link with your friends to earn rewards!
           </p>
         </div>
 
-        <div className="bg-primary/10 rounded-xl p-2 pl-6 flex flex-col md:flex-row items-center justify-between gap-4 border-none">
-          <p className="text-sm font-semibold text-foreground/80 tracking-wide select-all">
+        <div className="bg-primary/10 rounded-xl p-2 sm:pl-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 border-none w-full">
+          <p className="text-xs sm:text-sm font-semibold text-foreground/80 tracking-wide select-all w-full text-center sm:text-left px-2 sm:px-0 pt-2 sm:pt-0 truncate">
             {referralLink}
           </p>
           <Button 
             onClick={copyToClipboard}
-            className="w-full md:w-auto h-10 px-6 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold gap-2 shadow-sm transition-all active:scale-95"
+            className="w-full sm:w-auto h-10 px-6 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-semibold gap-2 shadow-sm transition-all active:scale-95 shrink-0"
           >
-            <Copy className="w-4 h-4" />
-            Copy Link
+            <Copy className="w-4 h-4 shrink-0" />
+            <span className="truncate">Copy Link</span>
           </Button>
         </div>
       </div>

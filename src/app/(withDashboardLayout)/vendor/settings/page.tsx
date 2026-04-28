@@ -36,7 +36,7 @@ const ProfileTab = () => (
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           <div className="space-y-2">
             <Label className="text-sm font-semibold text-foreground">Name</Label>
             <Input defaultValue="Sarah Amin" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 placeholder:text-muted-foreground shadow-none px-4" />
@@ -87,7 +87,7 @@ const SecurityTab = () => (
           <Input type="password" defaultValue="*******" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-4" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           <div className="space-y-2">
             <Label className="text-sm font-semibold text-foreground">New Password</Label>
             <Input type="password" defaultValue="******" className="h-12 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none px-4" />
@@ -129,15 +129,15 @@ const SecurityTab = () => (
 const SubscriptionTab = () => (
   <div className="space-y-10">
     <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-10">
-      <div className="flex items-center justify-between">
-        <div className="space-y-1.5">
-          <h2 className="text-xl font-semibold text-foreground">Current Plan</h2>
-          <p className="text-muted-foreground text-sm font-medium tracking-tight">Renews February 27, 2025 · AED 199/month</p>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
+        <div className="space-y-1 sm:space-y-1.5">
+          <h2 className="text-[18px] sm:text-xl font-semibold text-foreground">Current Plan</h2>
+          <p className="text-muted-foreground text-xs sm:text-sm font-medium tracking-tight">Renews February 27, 2025 · AED 199/month</p>
         </div>
-        <div className="px-4 py-1.5 bg-primary rounded-full text-[10px] font-bold text-primary-foreground uppercase tracking-widest shadow-sm">Active</div>
+        <div className="px-4 py-1.5 bg-primary rounded-full text-[10px] font-bold text-primary-foreground uppercase tracking-widest shadow-sm shrink-0">Active</div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         <div className="space-y-2">
           <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">Monthly Cost</p>
           <p className="text-3xl font-bold text-foreground">$199</p>
@@ -152,12 +152,12 @@ const SubscriptionTab = () => (
         </div>
       </div>
 
-      <div className="bg-slate-50/80 rounded-2xl p-8 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center">
-            <CheckCircle2 className="w-6 h-6 text-primary" />
+      <div className="bg-slate-50/80 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+            <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
           </div>
-          <p className="text-[15px] font-medium text-foreground">Currently using: <span className="font-semibold">Premium</span></p>
+          <p className="text-[14px] sm:text-[15px] font-medium text-foreground">Currently using: <span className="font-semibold">Premium</span></p>
         </div>
         <Button className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-sm shadow-sm transition-all active:scale-[0.98]">
           Upgrade your plan
@@ -168,21 +168,21 @@ const SubscriptionTab = () => (
 );
 
 const IntegrationsTab = () => (
-  <div className="space-y-8">
-    <div className="flex items-center justify-between">
-      <div className="space-y-1.5">
-        <h2 className="text-2xl font-bold text-foreground tracking-tight">Integrations</h2>
-        <p className="text-muted-foreground text-sm font-medium">Connect your favorite tools to streamline your business workflow.</p>
+  <div className="space-y-6 sm:space-y-8 w-full">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
+      <div className="space-y-1 sm:space-y-1.5">
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">Integrations</h2>
+        <p className="text-muted-foreground text-xs sm:text-sm font-medium leading-relaxed">Connect your favorite tools to streamline your business workflow.</p>
       </div>
-      <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-slate-100 shadow-sm">
+      <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white rounded-xl border border-slate-100 shadow-sm shrink-0">
         <div className="w-2 h-2 rounded-full bg-emerald-500" />
         <span className="text-[11px] font-semibold text-foreground">3 connected</span>
       </div>
     </div>
 
-    <div className="relative">
+    <div className="relative w-full">
       <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-      <Input placeholder="Search integrations..." className="h-12 pl-11 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none placeholder:text-muted-foreground" />
+      <Input placeholder="Search integrations..." className="h-11 sm:h-12 pl-11 bg-white border-slate-100 rounded-xl text-sm font-medium focus-visible:ring-primary/20 shadow-none placeholder:text-muted-foreground w-full" />
     </div>
 
     <div className="space-y-6">
@@ -236,31 +236,33 @@ export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState('Profile');
 
   return (
-    <div className="p-6 lg:p-10 space-y-8 bg-[#F8FAFC]/50 min-h-screen">
+    <div className="p-4 sm:p-6 lg:p-10 space-y-6 sm:space-y-8 bg-[#F8FAFC]/50 min-h-screen">
       {/* Header */}
       <div className="space-y-1">
-        <h1 className="text-3xl font-bold text-foreground tracking-tight">Settings</h1>
+        <h1 className="text-[24px] sm:text-3xl font-bold text-foreground tracking-tight">Settings</h1>
         <p className="text-muted-foreground text-sm font-medium">
           Manage your account settings and preferences
         </p>
       </div>
 
       {/* Tabs Navigation */}
-      <div className="bg-white p-1 rounded-lg border border-slate-200 shadow-sm flex items-center w-full">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={cn(
-              "flex-1 h-10 rounded-md text-sm font-medium transition-all",
-              activeTab === tab 
-                ? "bg-primary text-primary-foreground shadow-sm" 
-                : "text-muted-foreground hover:bg-slate-50 hover:text-foreground"
-            )}
-          >
-            {tab}
-          </button>
-        ))}
+      <div className="bg-white p-1 rounded-lg border border-slate-200 shadow-sm w-full overflow-x-auto no-scrollbar">
+        <div className="flex items-center min-w-max w-full">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={cn(
+                "flex-1 px-4 sm:px-6 h-10 rounded-md text-[13px] sm:text-sm font-medium transition-all shrink-0",
+                activeTab === tab 
+                  ? "bg-primary text-primary-foreground shadow-sm" 
+                  : "text-muted-foreground hover:bg-slate-50 hover:text-foreground"
+              )}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Tab Content */}
