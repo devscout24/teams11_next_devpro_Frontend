@@ -1,13 +1,14 @@
 import {
   LayoutDashboard,
-  Clock,
-  Presentation,
-  Users,
-  BarChart3,
-  UserPlus,
   CalendarDays,
-  FileText,
+  HandPlatter,
+  Users,
+  Star,
+  UserPlus,
+  CreditCard,
   Settings,
+  Ticket,
+  Target,
 } from 'lucide-react';
 import {UserRole} from '@/hooks/use-role';
 
@@ -21,9 +22,10 @@ export interface NavItem {
 
 export const sidebarItems = {
   user: {
-    name: 'A H Shobuj',
-    email: 'ahshobuj11@gmail.com',
-    avatar: '/avatars/shadcn.jpg',
+    name: 'Thierry Pam',
+    email: 'thierry@bookingpam.com',
+    avatar: '/avatars/thierry.jpg',
+    plan: 'Pro Plan',
   },
 
   navMain: [
@@ -34,46 +36,52 @@ export const sidebarItems = {
       roles: ['vendor', 'staff', 'customer'] as UserRole[],
     },
     {
-      title: 'Time Tracking',
-      url: '/time-tracking',
-      icon: Clock,
-      roles: ['staff'] as UserRole[],
-    },
-    {
-      title: 'Meetings',
-      url: '/meetings',
-      icon: Presentation,
-      roles: ['staff', 'customer'] as UserRole[],
-    },
-    {
-      title: 'My Schedule',
-      url: '/schedule',
+      title: 'Calendar',
+      url: '/calendar',
       icon: CalendarDays,
-      roles: ['customer'] as UserRole[],
+      roles: ['vendor', 'staff', 'customer'] as UserRole[],
     },
     {
-      title: 'My Reports',
-      url: '/reports',
-      icon: FileText,
-      roles: ['staff'] as UserRole[],
+      title: 'Bookings',
+      url: '/bookings',
+      icon: Ticket,
+      roles: ['vendor', 'customer'] as UserRole[],
     },
     {
-      title: 'Employees',
-      url: '/employees',
+      title: 'Services & Class',
+      url: '/services',
+      icon: HandPlatter,
+      roles: ['vendor'] as UserRole[],
+    },
+    {
+      title: 'Staff & Team',
+      url: '/staff',
       icon: Users,
       roles: ['vendor'] as UserRole[],
     },
     {
-      title: 'Company Stats',
-      url: '/statistics',
-      icon: BarChart3,
+      title: 'Reviews',
+      url: '/reviews',
+      icon: Star,
       roles: ['vendor'] as UserRole[],
     },
     {
-      title: 'Recruitment',
-      url: '/recruitment',
+      title: 'Invite Friends',
+      url: '/invite',
       icon: UserPlus,
+      roles: ['vendor', 'customer'] as UserRole[],
+    },
+    {
+      title: 'Your Brand',
+      url: '/brand',
+      icon: Target,
       roles: ['vendor'] as UserRole[],
+    },
+    {
+      title: 'Payments',
+      url: '/payments',
+      icon: CreditCard,
+      roles: ['vendor', 'customer'] as UserRole[],
     },
     {
       title: 'Settings',

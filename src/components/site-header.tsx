@@ -1,13 +1,13 @@
-﻿import {Separator} from '@/components/ui/separator';
-import {SidebarTrigger} from '@/components/ui/sidebar';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
 } from '@/components/ui/input-group';
-import {BellDot, SearchIcon} from 'lucide-react';
-import {NavUser} from './nav-user';
-import {sidebarItems} from '@/constants';
+import { BellDot, SearchIcon } from 'lucide-react';
+import { NavUser } from './nav-user';
+import { sidebarItems } from '@/constants';
+import { Separator } from '@/components/ui/separator';
 
 export function SiteHeader() {
   return (
