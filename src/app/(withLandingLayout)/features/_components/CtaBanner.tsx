@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 
 export default function CtaBanner() {
   return (
-    <section className="py-20 bg-brand-red">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-20 bg-[#E73404] mb-4 md:mb-8 lg:mb-12">
+      <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
           Ready to Transform Your Business?
         </h2>
@@ -14,7 +14,7 @@ export default function CtaBanner() {
         <Button
           variant="outline"
           size="lg"
-          className="rounded-full border-white text-white bg-transparent hover:bg-white hover:text-brand-red px-10"
+          className="rounded-md bg-white! cursor-pointer border-none  px-10"
         >
           Start Your Free Trial
         </Button>

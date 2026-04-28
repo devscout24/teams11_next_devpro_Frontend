@@ -1,4 +1,4 @@
-import { ContactForm } from "@/app/component/teams/support/ContactForm";
+import { ContactForm } from "@/app/(withLandingLayout)/support/_components/ContactForm";
 
 
 

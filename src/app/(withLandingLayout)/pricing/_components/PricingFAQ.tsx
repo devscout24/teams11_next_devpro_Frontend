@@ -42,7 +42,7 @@ const faqs = [
 export default function PricingFAQ() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-neutral-50">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">
             Frequently asked questions

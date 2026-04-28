@@ -55,12 +55,12 @@ const plans = [
 export default function PricingCards() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto px-4">
         <div className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 leading-tight">
             Simple, Transparent
             <br />
-            <span className="text-brand-red">Pricing</span>
+            <span className="text-[#E73404]">Pricing</span>
           </h1>
           <p className="mt-4 text-neutral-500 text-sm sm:text-base">
             Choose the plan that fits your business.
@@ -69,20 +69,20 @@ export default function PricingCards() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start max-w-5xl mx-auto px-4">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={cn(
                 "relative rounded-2xl border p-7 flex flex-col",
                 plan.featured
-                  ? "border-brand-red shadow-xl shadow-brand-red/10 scale-[1.02]"
+                  ? "border-[#E73404] shadow-xl shadow-[#E73404]/10 scale-[1.02]"
                   : "border-neutral-200 bg-white"
               )}
             >
               {plan.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-brand-red text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                  <span className="bg-[#E73404] text-white text-xs font-bold px-4 py-1.5 rounded-full">
                     Most Popular
                   </span>
                 </div>

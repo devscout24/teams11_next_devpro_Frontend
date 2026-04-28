@@ -32,7 +32,7 @@ const cards = [
 export default function TimeToGetSeen() {
   return (
     <section className="py-16 bg-neutral-50">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">
             Time to get seen
