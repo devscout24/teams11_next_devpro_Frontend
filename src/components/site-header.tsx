@@ -1,13 +1,16 @@
-﻿import {Separator} from '@/components/ui/separator';
+﻿'use client';
+
+import {Separator} from '@/components/ui/separator';
 import {SidebarTrigger} from '@/components/ui/sidebar';
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
 } from '@/components/ui/input-group';
-import {BellDot, SearchIcon} from 'lucide-react';
+import {SearchIcon} from 'lucide-react';
 import {NavUser} from './nav-user';
 import {sidebarItems} from '@/constants';
+import {NotificationModal} from './shared/common/NotificationModal';
 
 export function SiteHeader() {
   return (
@@ -18,19 +21,19 @@ export function SiteHeader() {
           orientation="vertical"
           className="mx-2 data-[orientation=vertical]:h-4"
         />
+
         <InputGroup className="max-w-[470px]">
           <InputGroupInput placeholder="Search something here..." />
           <InputGroupAddon>
             <SearchIcon />
           </InputGroupAddon>
         </InputGroup>
+
         <div className="ml-auto flex items-center gap-2">
-          <span className="p-2 border border-gray-300 rounded-full cursor-pointer flex justify-center items-center">
-            <BellDot className="w-4 h-4 text-primary" />
-          </span>
+          {/* Use the standalone component */}
+          <NotificationModal />
 
           <span className="w-px h-10 bg-gray-300"></span>
-
           <NavUser user={sidebarItems.user} />
         </div>
       </div>
