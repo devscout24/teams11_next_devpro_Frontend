@@ -75,31 +75,31 @@ const ratingBreakdown = [
 ];
 // New adsd
 const RatingSidebar = () => (
-  <div className="bg-white rounded-[32px] p-10 border border-slate-50 shadow-sm space-y-10">
+  <div className="bg-white rounded-[24px] sm:rounded-[32px] p-6 sm:p-10 border border-slate-50 shadow-sm space-y-6 sm:space-y-10 w-full">
     <div className="text-center space-y-3">
-      <h2 className="text-[72px] font-bold text-foreground leading-none">4.0</h2>
+      <h2 className="text-[56px] sm:text-[72px] font-bold text-foreground leading-none">4.0</h2>
       <div className="flex items-center justify-center gap-1.5">
         {[1, 2, 3, 4, 5].map((i) => (
-          <Star key={i} className={cn("w-6 h-6", i <= 4 ? "text-[#F59E0B] fill-[#F59E0B]" : "text-slate-200 fill-slate-200")} />
+          <Star key={i} className={cn("w-5 h-5 sm:w-6 sm:h-6", i <= 4 ? "text-[#F59E0B] fill-[#F59E0B]" : "text-slate-200 fill-slate-200")} />
         ))}
       </div>
-      <p className="text-base font-medium text-muted-foreground">6 reviews</p>
+      <p className="text-sm sm:text-base font-medium text-muted-foreground">6 reviews</p>
     </div>
 
-    <div className="space-y-4">
+    <div className="space-y-3 sm:space-y-4">
       {ratingBreakdown.map((row) => (
-        <div key={row.stars} className="flex items-center gap-5 group">
-          <div className="flex items-center gap-2 min-w-[24px]">
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{row.stars}</span>
-            <Star className="w-3.5 h-3.5 text-[#F59E0B] fill-[#F59E0B]" />
+        <div key={row.stars} className="flex items-center gap-3 sm:gap-5 group">
+          <div className="flex items-center gap-1 sm:gap-2 min-w-[20px] sm:min-w-[24px]">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{row.stars}</span>
+            <Star className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F59E0B] fill-[#F59E0B]" />
           </div>
-          <div className="h-2 flex-1 bg-slate-50 rounded-full overflow-hidden">
+          <div className="h-1.5 sm:h-2 flex-1 bg-slate-50 rounded-full overflow-hidden">
             <div 
               className="h-full bg-[#F59E0B] rounded-full transition-all duration-500" 
               style={{ width: `${row.percentage}%` }} 
             />
           </div>
-          <span className="text-sm font-medium text-muted-foreground/70 min-w-[12px]">{row.count}</span>
+          <span className="text-xs sm:text-sm font-medium text-muted-foreground/70 min-w-[12px]">{row.count}</span>
         </div>
       ))}
     </div>
@@ -107,42 +107,42 @@ const RatingSidebar = () => (
 );
 
 const ReviewCard = ({ review }: { review: typeof reviewsData[0] }) => (
-  <div className="bg-white rounded-[28px] p-7 border border-slate-50 shadow-sm space-y-5 hover:border-slate-200 transition-all">
-    <div className="flex items-start justify-between gap-4">
-      <div className="flex items-center gap-4">
-        <Avatar className="h-[52px] w-[52px] rounded-full shrink-0">
-          <AvatarFallback className={cn(review.avatarColor, "text-white text-base font-bold")}>
+  <div className="bg-white rounded-[24px] sm:rounded-[28px] p-5 sm:p-7 border border-slate-50 shadow-sm space-y-4 sm:space-y-5 hover:border-slate-200 transition-all w-full">
+    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <Avatar className="h-[44px] w-[44px] sm:h-[52px] sm:w-[52px] rounded-full shrink-0">
+          <AvatarFallback className={cn(review.avatarColor, "text-white text-sm sm:text-base font-bold")}>
             {review.avatar}
           </AvatarFallback>
         </Avatar>
         <div className="space-y-0.5">
-          <h3 className="text-base font-semibold text-foreground">{review.customer}</h3>
-          <p className="text-xs font-medium text-muted-foreground">
+          <h3 className="text-sm sm:text-base font-semibold text-foreground">{review.customer}</h3>
+          <p className="text-[11px] sm:text-xs font-medium text-muted-foreground">
             {review.service} · {review.date}
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 self-start sm:self-auto">
         {[1, 2, 3, 4, 5].map((i) => (
-          <Star key={i} className={cn("w-4 h-4", i <= review.rating ? "text-[#F59E0B] fill-[#F59E0B]" : "text-slate-200 fill-slate-200")} />
+          <Star key={i} className={cn("w-3.5 h-3.5 sm:w-4 sm:h-4", i <= review.rating ? "text-[#F59E0B] fill-[#F59E0B]" : "text-slate-200 fill-slate-200")} />
         ))}
       </div>
     </div>
 
-    <p className="text-[15px] font-medium text-foreground/80 leading-relaxed">
+    <p className="text-[14px] sm:text-[15px] font-medium text-foreground/80 leading-relaxed">
       {review.comment}
     </p>
 
     {review.reply ? (
-      <div className="bg-primary/10 rounded-[24px] p-6 space-y-2 border border-primary/10">
-        <h4 className="text-xs font-bold text-primary tracking-wide">Your Reply</h4>
-        <p className="text-[13px] font-medium text-primary/80 leading-relaxed">
+      <div className="bg-primary/10 rounded-[20px] sm:rounded-[24px] p-4 sm:p-6 space-y-1.5 sm:space-y-2 border border-primary/10">
+        <h4 className="text-[11px] sm:text-xs font-bold text-primary tracking-wide">Your Reply</h4>
+        <p className="text-xs sm:text-[13px] font-medium text-primary/80 leading-relaxed">
           {review.reply}
         </p>
       </div>
     ) : (
-      <button className="flex items-center gap-2 text-[13px] font-semibold text-primary hover:text-primary/80 transition-colors pt-2 active:scale-95 origin-left">
-        <MessageSquare className="w-4 h-4" />
+      <button className="flex items-center gap-1.5 sm:gap-2 text-[12px] sm:text-[13px] font-semibold text-primary hover:text-primary/80 transition-colors pt-1 sm:pt-2 active:scale-95 origin-left">
+        <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         Reply to Review
       </button>
     )}
@@ -151,23 +151,23 @@ const ReviewCard = ({ review }: { review: typeof reviewsData[0] }) => (
 
 export default function ReviewsPage() {
   return (
-    <div className="p-6 lg:p-10 space-y-10 bg-[#F8FAFC]/50 min-h-screen">
+    <div className="p-4 sm:p-6 lg:p-10 space-y-6 sm:space-y-10 bg-[#F8FAFC]/50 min-h-screen">
       {/* Header */}
       <div className="space-y-1">
-        <h1 className="text-[32px] font-bold text-foreground tracking-tight">Review Management</h1>
-        <p className="text-muted-foreground text-base font-medium">
+        <h1 className="text-[24px] sm:text-[32px] font-bold text-foreground tracking-tight">Review Management</h1>
+        <p className="text-muted-foreground text-sm sm:text-base font-medium">
           6 reviews · 4.0 average rating
         </p>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 sm:gap-10 items-start">
         {/* Left Sidebar */}
-        <div className="xl:col-span-4 sticky top-24">
+        <div className="xl:col-span-4 xl:sticky xl:top-24 w-full">
           <RatingSidebar />
         </div>
 
         {/* Review List */}
-        <div className="xl:col-span-8 space-y-6">
+        <div className="xl:col-span-8 space-y-4 sm:space-y-6 w-full">
           {reviewsData.map((review) => (
             <ReviewCard key={review.id} review={review} />
           ))}
